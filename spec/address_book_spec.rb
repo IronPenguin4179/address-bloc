@@ -82,5 +82,26 @@ RSpec.describe AddressBook do
             
             check_entry(entry_five, "Sussie", "555-555-2036", "sussie@blocmail.com")
         end
+        
+        it "imports the 1st entry from entries_2" do
+            book.import_from_csv("entries_2.csv")
+            entry_2_one = book.entries[0]
+            
+            check_entry(entry_2_one, "Bonita", "555-555-0123", "bonita@blocmail.com")
+        end
+        
+        it "imports the 2nd entry from entries_2" do
+            book.import_from_csv("entries_2.csv")
+            entry_2_two = book.entries[1]
+            
+            check_entry(entry_2_two, "Joseph", "555-555-1234", "joseph@blocmail.com")
+        end
+        
+        it "imports the 3rd entry from entries_2" do
+            book.import_from_csv("entries_2.csv")
+            entry_3_three = book.entries[2]
+            
+            check_entry(entry_3_three, "Zhaitan", "555-555-2345", "zhaitan@blocmail.com")
+        end
     end
 end
